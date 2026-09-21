@@ -134,6 +134,11 @@ a:focus {
   gap: 20px;
   flex-shrink: 0;
 }
+@media (max-width: 767px) {
+  .slider-navigation {
+    gap: 10px;
+  }
+}
 
 .slider-button {
   width: 50px;
@@ -1554,6 +1559,9 @@ a:focus {
   color: #9EA8BA;
   font-size: 15px;
   outline: none !important;
+  appearance: none;
+  background: #FFF url("../img/select-arrow.svg") no-repeat right 15px center;
+  padding-right: 40px;
 }
 .get-catalog .get-catalog-form-wrap .get-catalog-form .input-wrap select::-webkit-input-placeholder {
   color: #9EA8BA;
@@ -1592,6 +1600,11 @@ a:focus {
 }
 .get-catalog .get-catalog-form-wrap .get-catalog-form .checkbox-wrap {
   margin: 10px 0;
+}
+@media (max-width: 767px) {
+  .get-catalog .get-catalog-form-wrap .get-catalog-form .checkbox-wrap label {
+    align-items: center;
+  }
 }
 
 .top-banners {
@@ -2571,6 +2584,7 @@ a:focus {
     padding: 2px var(--pad) 12px;
     overflow-x: auto;
     padding-left: 20px;
+    padding-right: 10px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }

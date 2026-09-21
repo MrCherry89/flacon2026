@@ -129,6 +129,9 @@ a {
   align-items: center;
   gap: 20px;
   flex-shrink: 0;
+        @media(max-width: 767px){
+    gap: 10px;
+  }
 }
 
 .slider-button {
@@ -1407,6 +1410,9 @@ line-height: 45px;
             color: #9EA8BA;
             font-size: 15px;
           }
+           appearance: none;
+  background: #FFF url('../img/select-arrow.svg') no-repeat right 15px center;
+  padding-right: 40px;
         }
         b{
           display: block;
@@ -1428,6 +1434,11 @@ line-height: 45px;
       }
       .checkbox-wrap{
         margin: 10px 0;
+        label{
+                            @media(max-width: 767px){
+    align-items: center;
+  }
+        }
       }
     }
   }
@@ -2323,6 +2334,7 @@ border-bottom: 1px solid #DCE1E9 !important;
     padding: 2px var(--pad) 12px;
     overflow-x: auto;
     padding-left: 20px;
+    padding-right: 10px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
               @media(max-width: 1024px){
