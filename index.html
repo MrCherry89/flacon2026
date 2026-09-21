@@ -98,7 +98,7 @@
         </button>
         <button class="icon-btn header__search-toggle" type="button"
                 aria-label="Поиск" aria-controls="search" aria-expanded="false">
-          <svg class="icon"><use href="#i-search"/></svg>
+          <img src="img/search.svg" alt="">
         </button>
 
         <a class="logo" href="index.html" aria-label="FLACON-OPT.RU — на главную">
@@ -108,8 +108,9 @@
         <button class="catalog-btn" id="catalogBtn" type="button"
                 aria-expanded="false" aria-controls="mega">
           <span class="catalog-btn__icon" aria-hidden="true">
-            <svg class="icon icon--grid"><use href="#i-grid"/></svg>
-            <svg class="icon icon--close"><use href="#i-close"/></svg>
+            <img class="icon icon--close" src="img/close-burger.svg" alt="">
+            <img class="icon icon--grid" src="img/icon-close.svg" alt="">
+            
           </span>
           Каталог
         </button>
@@ -121,16 +122,16 @@
 
         <div class="actions">
           <a class="action action--login" href="/login" aria-label="Войти">
-            <svg class="icon"><use href="#i-user"/></svg>
+            <img src="img/sing-icon.svg" alt="">
             <span>Войти</span>
           </a>
           <a class="action action--fav" href="/favorites" aria-label="Избранное">
-            <svg class="icon"><use href="#i-heart"/></svg>
+            <img src="img/heart.svg" alt="">
             <span>Избранное</span>
             <b class="badge" data-count="favorites" hidden>0</b>
           </a>
           <a class="action action--cart" href="/cart" aria-label="Корзина">
-            <svg class="icon"><use href="#i-bag"/></svg>
+            <img src="img/basket-icon.svg" alt="">
             <span>Корзина</span>
             <b class="badge" data-count="cart" hidden>0</b>
           </a>
@@ -997,6 +998,14 @@
             </div>
           </div>
 
+          <div class="certificate-popup">
+  <div class="popup-content">
+    <button class="popup-close">&times;</button>
+    <button class="popup-prev">←</button>
+    <img src="" alt="">
+    <button class="popup-next">→</button>
+  </div>
+</div>
 
           <div class="swiper certificates-slider slider">
             <div class="swiper-wrapper">
@@ -1223,7 +1232,7 @@
             <div class="icon">
               <img src="img/info-icon3.png" alt="">
             </div>
-            <span class="text">Бесплатные пробники</span>
+            <span class="text max190">Бесплатные пробники</span>
           </div>
         </div>
       </div>

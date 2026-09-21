@@ -173,51 +173,49 @@ document.querySelectorAll('.js-slider5').forEach(section => {
 });
 
 
-const cards = document.querySelectorAll('.certificate-card');
+// const cards = document.querySelectorAll('.certificate-card');
 
-cards.forEach(card => {
-  card.onclick = () => {
-    const img = card.querySelector('img');
-    if (!img) return;
+// cards.forEach(card => {
+//   card.onclick = () => {
+//     const img = card.querySelector('img');
+//     if (!img) return;
 
-    const modal = document.createElement('div');
+//     const modal = document.createElement('div');
 
-    modal.style.cssText = `
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(0, 0, 0, .8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    `;
+//     modal.style.cssText = `
+//       position: fixed;
+//       inset: 0;
+//       z-index: 9999;
+//       background: rgba(0, 0, 0, .8);
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//     `;
 
-    modal.innerHTML = `
-      <span style="
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: #fff;
-        font-size: 40px;
-        cursor: pointer;
-      ">×</span>
+//     modal.innerHTML = `
+//       <span style="
+//         position: absolute;
+//         top: 20px;
+//         right: 30px;
+//         color: #fff;
+//         font-size: 40px;
+//         cursor: pointer;
+//       ">×</span>
 
-      <img src="${img.src}" style="
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-      ">
-    `;
+//       <img src="${img.src}" style="
+//         object-fit: contain;
+//       ">
+//     `;
 
-    document.body.append(modal);
+//     document.body.append(modal);
 
-    modal.onclick = e => {
-      if (e.target === modal || e.target.tagName === 'SPAN') {
-        modal.remove();
-      }
-    };
-  };
-});
+//     modal.onclick = e => {
+//       if (e.target === modal || e.target.tagName === 'SPAN') {
+//         modal.remove();
+//       }
+//     };
+//   };
+// });
 
 
 document.querySelectorAll('.favorite-btn').forEach(btn => {
@@ -242,4 +240,41 @@ new Swiper('.promo-slider', {
 
 
     speed: 600,
+});
+
+
+const cards = document.querySelectorAll('.certificate-card');
+const popup = document.querySelector('.certificate-popup');
+const image = popup.querySelector('img');
+const close = popup.querySelector('.popup-close');
+const prev = popup.querySelector('.popup-prev');
+const next = popup.querySelector('.popup-next');
+
+let index = 0;
+
+const open = i => {
+  index = i;
+  image.src = cards[index].querySelector('img').src;
+  popup.classList.add('active');
+};
+
+cards.forEach((card, i) => card.onclick = () => open(i));
+
+close.onclick = () => popup.classList.remove('active');
+
+prev.onclick = () => open((index - 1 + cards.length) % cards.length);
+
+next.onclick = () => open((index + 1) % cards.length);
+
+popup.onclick = e => {
+  if (e.target === popup) {
+    popup.classList.remove('active');
+  }
+};
+
+document.querySelectorAll('.mobile-bottom-panel .links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.mobile-bottom-panel .links a.active')?.classList.remove('active');
+    link.classList.add('active');
+  });
 });

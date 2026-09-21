@@ -177,7 +177,6 @@ a {
 }
 
 .slider-button.swiper-button-disabled {
-  opacity: 0.35;
   cursor: default;
 }
 
@@ -249,6 +248,83 @@ a {
   object-fit: cover;
 }
 
+
+.certificate-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #0008;
+}
+
+.certificate-popup.active {
+  display: flex;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.popup-content img {
+  display: block;
+  max-width: 80vw;
+  max-height: 85vh;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #F1F4F9;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 36px;
+    font-weight: 200;
+    line-height: 102%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.popup-prev,
+.popup-next {
+  position: fixed;
+  top: 50%;
+  border: 0;
+  background: black;
+  color: #fff;
+  width: 50px;
+  transition: .3s;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 102%;
+  cursor: pointer;
+  &:hover{
+    background: white;
+    color: #000;
+    border-color: #000;
+  }
+}
+
+.popup-prev {
+  left: 30px;
+        @media(max-width: 1024px){
+    left: 10px;
+  }
+}
+
+.popup-next {
+  right: 30px;
+        @media(max-width: 1024px){
+   right: 10px;
+  }
+}
 
 .slider-pagination {
   display: none;
@@ -776,7 +852,7 @@ a {
       }
     }
     .text{
-      max-width: 190px;
+      max-width: 200px;
       width: 100%;
       margin: 0 auto;
       font-size: 18px;
@@ -786,6 +862,9 @@ a {
               @media(max-width: 767px){
 font-size: 16px;
 max-width: 188px;
+  }
+  &.max190{
+    max-width: 190px;
   }
 
     }
@@ -1373,6 +1452,10 @@ line-height: 45px;
     gap: 8px;
             @media(max-width: 767px){
    top: 10px;
+   top: inherit;
+   width: calc(100% - 120px);
+   bottom: 30px;
+   left: 20px;
   }
 }
 
@@ -1385,10 +1468,17 @@ line-height: 45px;
     background: rgba(255, 255, 255, .35);
 
     opacity: 1;
+
+                @media(max-width: 767px){
+    width: 12px;
+    height: 12px;
+    max-width: 12px;
+    background: white;
+  }
 }
 
 .promo-pagination .swiper-pagination-bullet-active {
-    background: #fff;
+    background: #00FFFF;
 }
   .promo-slider {
     width: 100%;
@@ -1431,6 +1521,11 @@ line-height: 45px;
     font-size: 20px;
             @media(max-width: 767px){
     bottom: 20px;
+    width: 32px;
+    height: 32px;
+    img{
+      width: 14px;
+    }
   }
 }
 
@@ -1442,7 +1537,8 @@ line-height: 45px;
       transform: rotate(180deg);
     }
             @media(max-width: 767px){
-    left: 20px;
+    right: 62px;
+    left: inherit;
   }
 }
 
@@ -1452,13 +1548,12 @@ line-height: 45px;
     color: #111;
             @media(max-width: 767px){
     left: 75px;
+    left: inherit;
+    right: 20px;
+    bottom: 20px;
   }
 }
 
-.promo-prev:hover,
-.promo-next:hover {
-    opacity: .8;
-}
 
   .banners-wrap{
     display: flex;
@@ -1770,8 +1865,8 @@ line-height: 45px;
 
 .catalog-btn__icon {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 .catalog-btn__icon .icon {
   position: absolute;
@@ -1783,6 +1878,8 @@ line-height: 45px;
 .catalog-btn__icon .icon--close { opacity: 0; transform: rotate(-90deg); }
 .catalog-btn[aria-expanded="true"] .icon--grid  { opacity: 0; transform: rotate(90deg); }
 .catalog-btn[aria-expanded="true"] .icon--close { opacity: 1; transform: none; }
+
+
 
 .search {
   position: relative;
@@ -1797,19 +1894,19 @@ background-color: #F9F9F9;
 .search .icon {
   position: absolute;
   left: 12px;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   color: #333;
   pointer-events: none;
 }
 .search input {
   width: 100%;
   height: 40px;
-  padding: 0 14px 0 38px;
+  padding: 0 14px 0 50px;
   border: 1px solid transparent;
   border-radius: var(--radius);
   background: var(--c-bg-search);
-  color: var(--c-text);
+  color: #909090;
   font: 400 14px var(--font);
   outline: none !important;
   transition: background .2s, border-color .2s, box-shadow .2s;
