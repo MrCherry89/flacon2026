@@ -1994,7 +1994,7 @@ a:focus {
 }
 @media (max-width: 767px) {
   .header-block .header .wrapper {
-    gap: 10px;
+    gap: 14px;
   }
 }
 .header-block .header__burger,
@@ -2516,6 +2516,12 @@ a:focus {
   .header-block .header__burger,
 .header-block .header__search-toggle {
     display: inline-flex;
+    width: 24px;
+    height: 24px;
+  }
+  .header-block .header__burger img,
+.header-block .header__search-toggle img {
+    width: 100%;
   }
   .header-block .header__burger {
     margin-left: -8px;

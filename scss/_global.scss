@@ -1798,7 +1798,7 @@ line-height: 45px;
     padding-bottom: 14px;
   }
           @media(max-width: 767px){
-    gap: 10px;
+    gap: 14px;
   }
   }
 }
@@ -2284,7 +2284,11 @@ border-bottom: 1px solid #DCE1E9 !important;
   }
 
   .header__burger,
-  .header__search-toggle { display: inline-flex; }
+  .header__search-toggle { display: inline-flex; width: 24px; height: 24px;
+    img{
+      width: 100%;
+    }
+  }
 
   .header__burger { margin-left: -8px; }
 
