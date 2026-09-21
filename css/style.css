@@ -2008,6 +2008,7 @@ a:focus {
 @media (max-width: 767px) {
   .header-block .header .wrapper {
     gap: 14px;
+    padding-left: 30px;
   }
 }
 .header-block .header__burger,
